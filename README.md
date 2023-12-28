@@ -205,10 +205,10 @@
     <summary style="font-size: 1.5em;"> 좋아요 API 설계 </summary>
     <div markdown="3">
 
-### 1. 좋아요 추가/취소
+### 1. 좋아요 추가
 
 -   Method
-    -   PUT
+    -   POST
 -   URI
     -   /likes/{bookId}
 -   HTTP status code
@@ -217,16 +217,17 @@
 
 -   Response Body
 
-    ```javascript
-    {
-        likeId: 좋아요 id,
-        userId: 유저 id,
-        bookId: 도서 id,
-        likes: 좋아요 수,
-        liked: boolean,
-    }
-    ```
+### 2. 좋아요 취소
 
+-   Method
+    -   DELETE
+-   URI
+    -   /likes/{bookId}
+-   HTTP status code
+    -   성공 200
+-   Request Body
+
+-   Response Body
     </div>
 
 </details>
