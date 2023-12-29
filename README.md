@@ -137,7 +137,6 @@
     ```javascript
     {
         book_id: 도서 id,
-        like_id: 좋아요 id,
         title: "도서 제목",
         category: "도서 카테고리",
         format: "도서 포맷",
@@ -173,8 +172,8 @@
     [
         {
             book_id: 도서 id,
+            category_id: 도서 카테고리 id,
             title: "도서 제목",
-            category: "도서 카테고리",
             author: "도서 작가",
             summary: "도서 요약 설명",
             price: 가격,
@@ -247,7 +246,7 @@
 
     ```javascript
     {
-        bookId: 도서 id,
+        book_id: 도서 id,
         count: 수량
     }
     ```
@@ -259,7 +258,7 @@
 -   Method
     -   GET
 -   URI
-    -   /carts
+    -   /cart
 -   HTTP status code
     -   성공 200
 -   Request Body
@@ -271,14 +270,14 @@
             book_id: 도서 id,
             title: "도서 제목",
             summary: "도서 요약",
-            quantity: 수량,
+            count: 수량,
             price: 가격
         },
         {
             book_id: 도서 id,
             title: "도서 제목",
             summary: "도서 요약",
-            quantity: 수량,
+            count: 수량,
             price: 가격
         },
         ...
@@ -290,7 +289,7 @@
 -   Method
     -   DELETE
 -   URI
-    -   /carts/{book_id}
+    -   /cart/{cart_id}
 -   HTTP status code
     -   성공 200
 -   Request Body
@@ -302,7 +301,7 @@
 -   Method
     -   GET
 -   URI
-    -   /carts
+    -   /cart
 -   HTTP status code
     -   성공 200
 -   Request Body
@@ -324,7 +323,7 @@
             book_id: 도서 id,
             title: "도서 제목",
             summary: "도서 요약",
-            quantity: 수량,
+            count: 수량,
             price: 가격
         },
         {
@@ -332,7 +331,7 @@
             book_id: 도서 id,
             title: "도서 제목",
             summary: "도서 요약",
-            quantity: 수량,
+            count: 수량,
             price: 가격
         },
         ...
@@ -369,12 +368,12 @@
             {
                 cart_item_id: 장바구니 도서 id,
                 book_id: 도서 id,
-                quantity: 수량
+                count: 수량
             },
             {
                 cart_item_id: 장바구니 도서 id,
                 book_id: 도서 id,
-                quantity: 수량
+                count: 수량
             }
             ...
         ]
@@ -383,7 +382,9 @@
             receiver: "받는 사람",
             contact: "010-0000-0000",
         }
-        total_price: "총 금액"
+        book_title: "대표 책 제목",
+        total_price: "총 금액",
+        total_count: "총 수량"
     }
     ```
 
@@ -410,7 +411,7 @@
                 receiver: "받는 사람 이름",
                 contact: "010-0000-0000",
             },
-            bookTitle: "대표 책 제목",
+            book_title: "대표 책 제목",
             total_price: "총 결제 금액",
             total_count: "총 수량"
         },
@@ -422,7 +423,7 @@
                 receiver: "받는 사람 이름",
                 contact: "010-0000-0000",
             },
-            bookTitle: "대표 책 제목",
+            book_title: "대표 책 제목",
             total_price: "총 결제 금액",
             total_count: "총 수량"
         }
@@ -446,17 +447,17 @@
     [
         {
             book_id: "도서 id",
-            book_title: "도서 제목",
+            title: "책 제목",
             author: "작가명",
             price: 가격,
-            quantity: 수량,
+            count: 수량,
         },
         {
             book_id: "도서 id",
-            book_title: "도서 제목",
+            title: "책 제목",
             author: "작가명",
             price: 가격,
-            quantity: 수량,
+            count: 수량,
         }
         ...
     ]
@@ -474,7 +475,7 @@
 <summary> 펼쳐보기 </summary>
 <div markdown="1">
 
-![image](https://github.com/namu56/book-store-project/assets/107787137/86991f16-e601-4016-af06-9427846a5361)
+![erd_image](https://github.com/namu56/book-store-project/assets/107787137/eb284cfa-e072-4c0a-ae3a-b7d93fd07e4c)
 
 </div>
 </details>
