@@ -8,7 +8,16 @@ dotenv.config();
 
 app.use(express.json());
 
-const userRouter = require('./routes/users');
-app.use('/', userRouter);
-
 app.listen(process.env.PORT);
+
+const userRouter = require('./routes/users');
+const bookRouter = require('./routes/books');
+const cartRouter = require('./routes/carts');
+const likeRouter = require('./routes/likes');
+const orderRouter = require('./routes/orders');
+
+app.use('/users', userRouter);
+app.use('/books', bookRouter);
+app.use('/carts', bookRouter);
+app.use('/likes', bookRouter);
+app.use('/orders', bookRouter);
