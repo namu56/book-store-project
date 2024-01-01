@@ -475,7 +475,7 @@
 <summary> 펼쳐보기 </summary>
 <div markdown="1">
 
-![erd_image](https://github.com/namu56/book-store-project/assets/107787137/eb284cfa-e072-4c0a-ae3a-b7d93fd07e4c)
+![book_store_erd](https://github.com/namu56/book-store-project/assets/107787137/8c4fe903-971e-436c-8191-05c8025ef68c)
 
 </div>
 </details>

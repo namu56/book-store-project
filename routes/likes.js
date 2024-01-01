@@ -1,5 +1,5 @@
 const express = require('express');
-const router = expess.Router();
+const router = express.Router();
 
 // 좋아요 추가
 router.post('/:id', (req, res) => {});

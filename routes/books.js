@@ -1,5 +1,5 @@
 const express = require('express');
-const router = expess.Router();
+const router = express.Router();
 
 // 전체 도서 조회
 router.get('/', (req, res) => {});

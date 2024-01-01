@@ -1,10 +1,11 @@
-const express = require('express');
+const express = require('express'); // express 모듈
 const router = express.Router();
+const conn = require('../mariadb'); // db 모듈
+
+const join = require('../controller/UserController');
 
 // 회원 가입
-router.post('/join', (req, res) => {
-    res.json('회원 가입');
-});
+router.post('/join', join);
 
 // 로그인
 router.post('/login', (req, res) => {

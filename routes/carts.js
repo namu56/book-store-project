@@ -1,5 +1,5 @@
 const express = require('express');
-const router = expess.Router();
+const router = express.Router();
 
 // 장바구니 담기
 router.post('/', (req, res) => {});
