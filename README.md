@@ -53,9 +53,15 @@
     ```javascript
     {
         email: '사용자가 입력한 이메일',
+        password: '사용자가 입력한 비밀번호'
     }
     ```
 -   Response Body
+    ```javascript
+    {
+        email: '사용자가 입력한 이메일',
+    }
+    ```
 
 ### 4. 비밀번호 초기화 (수정)
 
@@ -68,7 +74,8 @@
 -   Request Body
     ```javascript
     {
-        password: '사용자가 입력한 비밀번호',
+        email: '비밀번호 초기화 요청 페이지에서 입력했던 이메일',
+        password: '사용자가 입력한 비밀번호'
     }
     ```
 -   Response Body
