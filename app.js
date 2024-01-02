@@ -8,7 +8,7 @@ dotenv.config();
 
 app.use(express.json());
 
-app.listen(process.env.PORT);
+app.listen(process.env.DEV_PORT);
 
 const userRouter = require('./routes/users');
 const bookRouter = require('./routes/books');

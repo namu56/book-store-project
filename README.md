@@ -80,7 +80,7 @@
     ```
 -   Response Body
 
-        </div>
+    </div>
 
 </details>
 <details>
