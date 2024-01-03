@@ -103,10 +103,15 @@
 -   Response Body
 
     ```javascript
+    /*
+    전체 도서 목록에는 도서의 상세 정보를 포함합니다
+    필요한 데이터만 선별하여 구현 부탁드립니다
+    */
     [
         {
             book_id: 도서 id,
             title: "도서 제목",
+            img: 이미지 id(picsum image #id)
             author: "도서 작가",
             summary: "도서 요약 설명",
             price: 가격,
@@ -116,6 +121,7 @@
         {
             book_id: 도서 id,
             title: "도서 제목",
+            img: 이미지 id(picsum image #id)
             author: "도서 작가",
             summary: "도서 요약 설명",
             price: 가격,
@@ -145,6 +151,7 @@
     {
         book_id: 도서 id,
         title: "도서 제목",
+        img: 이미지 id(picsum image #id)
         category: "도서 카테고리",
         format: "도서 포맷",
         author: "도서 작가",
@@ -181,6 +188,7 @@
             book_id: 도서 id,
             category_id: 도서 카테고리 id,
             title: "도서 제목",
+            img: 이미지 id(picsum image #id)
             author: "도서 작가",
             summary: "도서 요약 설명",
             price: 가격,
@@ -189,7 +197,9 @@
         },
         {
             book_id: 도서 id,
+            category_id: 도서 카테고리 id,
             title: "도서 제목",
+            img: 이미지 id(picsum image #id)
             category: "도서 카테고리",
             author: "도서 작가",
             summary: "도서 요약 설명",
@@ -207,8 +217,42 @@
 </details>
 
 <details>
-    <summary style="font-size: 1.5em;"> 좋아요 API 설계 </summary>
+    <summary style="font-size: 1.5em;"> 카테고리 API 설계 </summary>
     <div markdown="3">
+
+### 1. 카테고리 전체 조회
+
+-   Method
+    -   GET
+-   URI
+    -   /category
+-   HTTP status code
+    -   성공 200
+-   Request Body
+
+-   Response Body
+
+    ```javascript
+    [
+        {
+            id: 0,
+            name: "동화"
+        },
+        {
+            id: 1,
+            name: "소설"
+        }
+        ...
+    ]
+    ```
+
+    </div>
+
+</details>
+
+<details>
+    <summary style="font-size: 1.5em;"> 좋아요 API 설계 </summary>
+    <div markdown="4">
 
 ### 1. 좋아요 추가
 
@@ -239,7 +283,7 @@
 
 <details>
     <summary style="font-size: 1.5em;"> 장바구니 API 설계 </summary>
-    <div markdown="4">
+    <div markdown="5">
 
 ### 1. 장바구니 담기
 
@@ -351,7 +395,7 @@
 
 <details>
     <summary style="font-size: 1.5em;"> 주문 API 설계 </summary>
-    <div markdown="5">
+    <div markdown="6">
 
 ### 1. 주문하기
 
