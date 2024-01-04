@@ -152,14 +152,14 @@
         book_id: 도서 id,
         title: "도서 제목",
         img: 이미지 id(picsum image #id)
-        category: "도서 카테고리",
-        format: "도서 포맷",
+        category_name: "도서 카테고리 이름",
+        form: "도서 포맷",
         author: "도서 작가",
         isbn: "isbn",
         pages: "쪽 수",
         summary: "도서 요약 설명",
-        description: "도서 상세 설명",
-        index: "목차",
+        detail: "도서 상세 설명",
+        contents: "목차",
         price: 가격,
         likes: 좋아요 수,
         published_date: "출간일"
@@ -236,11 +236,11 @@
     [
         {
             id: 0,
-            name: "동화"
+            category_name: "동화"
         },
         {
             id: 1,
-            name: "소설"
+            category_name: "소설"
         }
         ...
     ]
