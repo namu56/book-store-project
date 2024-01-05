@@ -91,11 +91,11 @@
 
 -   추가 고려 사항
     -   이미지 경로
-    -   8개씩 보내주기
+    -   n개씩 보내주기
 -   Method
     -   GET
 -   URI
-    -   /books
+    -   /books?limit={page당 도서 수}&currentPage={현재 page}
 -   HTTP status code
     -   성공 200
 -   Request Body
@@ -176,7 +176,7 @@
 -   Method
     -   GET
 -   URI
-    -   /books?categoryId={categoryId}&new={boolean}
+    -   /books?categoryId={categoryId}&news={boolean}
 -   HTTP status code
     -   성공 200
 -   Request Body
@@ -261,7 +261,11 @@
 -   URI
     -   /likes/{book_id}
 -   HTTP status code
+
     -   성공 200
+
+-   header
+    -   token
 -   Request Body
 
 -   Response Body
