@@ -1,5 +1,5 @@
 const express = require('express');
-const { addLike, removeLike } = require('../controller/LikeController');
+const { addLike, removeLike } = require('../controllers/LikeController');
 const router = express.Router();
 
 router.post('/:book_id', addLike); // 좋아요 추가
