@@ -1,5 +1,6 @@
 const conn = require('../mariadb'); // db 모듈
 const { StatusCodes } = require('http-status-codes');
+const { handleQueryError } = require('../utils/ErrorHandler');
 const jwt = require('jsonwebtoken'); // jwt 모듈
 const crypto = require('crypto'); // crypto 모듈 : 암호화
 const dotenv = require('dotenv'); // dotenv 모듈
@@ -16,10 +17,7 @@ const join = (req, res) => {
     let values = [email, hashedPassword, salt];
 
     conn.query(sql, values, (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(StatusCodes.BAD_REQUEST).end();
-        }
+        if (err) return handleQueryError(err, res);
 
         return res.status(StatusCodes.CREATED).json(results);
     });
@@ -30,10 +28,7 @@ const login = (req, res) => {
 
     let sql = 'SELECT * FROM users WHERE email = ?';
     conn.query(sql, email, (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(StatusCodes.BAD_REQUEST).end();
-        }
+        if (err) return handleQueryError(err, res);
 
         const loginUser = results[0];
 
@@ -73,10 +68,7 @@ const passwordResetRequest = (req, res) => {
 
     let sql = 'SELECT * FROM users WHERE email = ?';
     conn.query(sql, email, (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(StatusCodes.BAD_REQUEST).end();
-        }
+        if (err) return handleQueryError(err, res);
 
         // 이메일로 유저가 있는지 찾아본다
         const user = results[0];
@@ -99,10 +91,7 @@ const passwordReset = (req, res) => {
     let sql = 'UPDATE users SET password = ?, salt = ? WHERE email = ?';
     let values = [hashedPassword, salt, email];
     conn.query(sql, values, (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(StatusCodes.BAD_REQUEST).end();
-        }
+        if (err) return handleQueryError(err, res);
 
         if (results.affectiedRows == 0) {
             return res.status(StatusCodes.BAD_REQUEST).end();
